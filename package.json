@@ -1,0 +1,45 @@
+{
+  "name": "orchid-lang",
+  "displayName": "Orchid Language",
+  "description": "Syntax highlighting for the Orchid programming language",
+  "version": "0.0.2",
+  "publisher": "Zohan-Haque",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "categories": ["Programming Languages"],
+  "main": "./run.js",
+  "activationEvents": [
+    "onCommand:orchid.runScript"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "orchid",
+        "aliases": ["Orchid", "orchid"],
+        "extensions": [".orchid"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/orchid.png",
+          "dark": "./images/orchid.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "orchid",
+        "scopeName": "source.orchid",
+        "path": "./syntaxes/orchid.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "orchid.runScript",
+        "title": "Run Orchid Script"
+      }
+    ]
+  },
+  "devDependencies": {
+    "vscode": "*"
+  }
+}
